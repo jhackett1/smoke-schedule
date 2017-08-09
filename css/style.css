@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url("../fonts/bebas-neue.otf"); }
+
+section#smoke-schedule {
+  margin: 30px 0px;
+  height: 520px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+  background-color: #f6f6f6; }
+  section#smoke-schedule p.no-js {
+    text-align: center;
+    font-size: 2em;
+    color: #dfdfdf; }
+  section#smoke-schedule ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none; }
+  section#smoke-schedule ul.labels {
+    position: absolute;
+    left: 0px;
+    z-index: 3;
+    -webkit-box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); }
+    section#smoke-schedule ul.labels li {
+      left: 0px;
+      margin: 0px;
+      display: block;
+      width: 90px;
+      height: 70px;
+      padding: 7px;
+      border-bottom: 1px solid #dfdfdf;
+      background-color: rgba(255, 255, 255, 0.9);
+      background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0.9)));
+      background: linear-gradient(to right, white, rgba(255, 255, 255, 0.9)); }
+      section#smoke-schedule ul.labels li:first-of-type {
+        height: 35px; }
+  section#smoke-schedule ul.days {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    position: relative; }
+    section#smoke-schedule ul.days div.meridian {
+      height: 100%;
+      border-left: 1px solid #A42739;
+      position: absolute;
+      z-index: 1;
+      margin: 0px 0px 0px 90px;
+      opacity: 0;
+      -webkit-transition: 0.2s ease-out;
+      transition: 0.2s ease-out; }
+    section#smoke-schedule ul.days ul.hour-labels {
+      width: 3360px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-left: 90px; }
+      section#smoke-schedule ul.days ul.hour-labels li {
+        display: inline-block;
+        margin: 0px;
+        height: 35px;
+        width: 140px;
+        overflow: hidden;
+        padding: 5px; }
+    section#smoke-schedule ul.days ul.day {
+      height: 70px;
+      position: relative;
+      width: 3449px;
+      border-bottom: 1px solid #dfdfdf; }
+      section#smoke-schedule ul.days ul.day:nth-of-type(2), section#smoke-schedule ul.days ul.day:nth-of-type(8) {
+        background-color: #fafafa; }
+      section#smoke-schedule ul.days ul.day:last-of-type {
+        border-bottom: none; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      section#smoke-schedule ul.days ul.day li {
+        display: inline-block;
+        background-color: #efefef;
+        margin: 0px;
+        height: 100%;
+        width: 140px;
+        overflow: hidden;
+        padding: 5px;
+        position: absolute;
+        -webkit-animation: 0.2s fade ease-out;
+        animation: 0.2s fade ease-out;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        border-left: 1px solid #dfdfdf; }
+        section#smoke-schedule ul.days ul.day li.on-now {
+          background-color: #C54053;
+          border-left: 1px solid #C54053;
+          z-index: 2;
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+          section#smoke-schedule ul.days ul.day li.on-now p {
+            display: none; }
+          section#smoke-schedule ul.days ul.day li.on-now::before {
+            content: "On Now";
+            color: #f6f6f6;
+            font-family: "Open Sans Condensed", Helvetica, sans-serif;
+            font-size: 0.8em; }
+          section#smoke-schedule ul.days ul.day li.on-now p, section#smoke-schedule ul.days ul.day li.on-now h3 {
+            color: #f6f6f6; }
+        section#smoke-schedule ul.days ul.day li p {
+          font-size: 0.7em;
+          margin: 0px;
+          padding: 0px;
+          color: #969696; }
+        section#smoke-schedule ul.days ul.day li h3 {
+          font-size: 1.1em;
+          margin: 2px 0px;
+          padding: 0px;
+          line-height: 1em; }
+        section#smoke-schedule ul.days ul.day li a {
+          top: 0px;
+          position: absolute;
+          left: 0px;
+          display: block;
+          right: 0px;
+          bottom: 0px;
+          margin: 0px; }

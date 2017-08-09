@@ -1,0 +1,140 @@
+// Fonts
+@font-face
+  font-family: 'Bebas Neue'
+  src: url('../fonts/bebas-neue.otf')
+
+// Color scheme
+$brand-red: #bb2d42
+$dark-red: #A42739
+$brand-blue: #254461
+$dark-grey: #2d2d2d
+$mid-grey: #505050
+$light-grey: #969696
+$bg-grey: #f6f6f6
+
+// Default font stacks
+$h-stack: "Bebas Neue", Oswald, sans-serif
+$p-stack: "Open Sans Condensed", Helvetica, sans-serif
+
+
+section#smoke-schedule
+  margin: 30px 0px
+  height: 520px
+  width: 100%
+  position: relative
+  overflow: hidden
+  border-radius: 1px
+  background-color: #f6f6f6
+
+  p.no-js
+    text-align: center
+    font-size: 2em
+    color: #dfdfdf
+
+  ul
+    padding: 0px
+    margin: 0px
+    list-style-type: none
+
+  ul.labels
+    position: absolute
+    left: 0px
+    z-index: 3
+    box-shadow: 2px 0px 5px rgba(0,0,0,0.1)
+    li
+      left: 0px
+      margin: 0px
+      display: block
+      width: 90px
+      height: 70px
+      padding: 7px
+      border-bottom: 1px solid #dfdfdf
+      background-color: rgba(255,255,255,0.9)
+      background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0.9))
+      &:first-of-type
+        height: 35px
+
+  ul.days
+    overflow-x: scroll
+    overflow-y: hidden
+    width: 100%
+    position: relative
+
+    div.meridian
+      height: 100%
+      border-left: 1px solid $dark-red
+      position: absolute
+      z-index: 1
+      margin: 0px 0px 0px 90px
+      opacity: 0
+      transition: 0.2s ease-out
+
+    ul.hour-labels
+      width: 3360px
+      display: flex
+      margin-left: 90px
+      li
+        display: inline-block
+        margin: 0px
+        height: 35px
+        width: 140px
+        overflow: hidden
+        padding: 5px
+    ul.day
+      height: 70px
+      position: relative
+      width: 3449px
+      border-bottom: 1px solid #dfdfdf
+      &:nth-of-type(2), &:nth-of-type(8)
+        background-color: #fafafa
+      &:last-of-type
+        border-bottom: none
+      @keyframes fade
+        from
+          opacity: 0
+        to
+          opacity: 1
+      li
+        display: inline-block
+        background-color: #efefef
+        margin: 0px
+        height: 100%
+        width: 140px
+        overflow: hidden
+        padding: 5px
+        position: absolute
+        animation: 0.2s fade ease-out
+        animation-fill-mode: forwards
+        border-left: 1px solid #dfdfdf
+        &.on-now
+          background-color: #C54053
+          border-left: 1px solid #C54053
+          z-index: 2
+          transform: scale(1.1)
+          p
+            display: none
+          &::before
+            content: "On Now"
+            color: $bg-grey
+            font-family: $p-stack
+            font-size: 0.8em
+          p, h3
+            color: $bg-grey
+        p
+          font-size: 0.7em
+          margin: 0px
+          padding: 0px
+          color: $light-grey
+        h3
+          font-size: 1.1em
+          margin: 2px 0px
+          padding: 0px
+          line-height: 1em
+        a
+          top: 0px
+          position: absolute
+          left: 0px
+          display: block
+          right: 0px
+          bottom: 0px
+          margin: 0px

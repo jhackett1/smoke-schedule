@@ -1,0 +1,51 @@
+li.ng-enter {
+  opacity: 0;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out; }
+
+li.ng-enter-stagger {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s; }
+
+li.ng-enter-active {
+  opacity: 1; }
+
+@-webkit-keyframes enterPlayer {
+  0% {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+    transform: translate3d(0px, 20px, 0px);
+    opacity: 0; }
+  20% {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+    transform: translate3d(0px, 20px, 0px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1; } }
+
+@keyframes enterPlayer {
+  0% {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+    transform: translate3d(0px, 20px, 0px);
+    opacity: 0; }
+  20% {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+    transform: translate3d(0px, 20px, 0px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1; } }
+
+#mixcloud-player.ng-hide-remove {
+  -webkit-animation: 0.2s enterPlayer ease-out;
+  animation: 0.2s enterPlayer ease-out; }
+
+#mixcloud-player.ng-hide-add {
+  -webkit-animation: 0.2s enterPlayer ease-out;
+  animation: 0.2s enterPlayer ease-out;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse; }
